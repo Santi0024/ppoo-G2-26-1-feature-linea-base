@@ -1,4 +1,28 @@
-Santiago Useche Romero
-Cristian Rodriguez Ruiz
-Julian Fonseca
-Andres Rojas
+# Profundizacion a POO (POO - Convocatoria 1)
+
+API RESTful desarrollada con **Spring Boot** para la gestión de Docentes y Estudiantes. Este proyecto fue desarrollado como parte de la **Convocatoria 1 de Profundización de Programación Orientada a Objetos**.
+
+## Integrantes
+- Santiago Useche Romero
+- Cristian Rodriguez RUiz
+- Julian Fonseca Rojas
+- Andres Bustamante Rojas
+
+---
+## Puntos Adicionales Implementados
+Este proyecto cumple con todos los puntos adicionales de la rúbrica de evaluación:
+
+1. **Manejo de Excepciones:** Implementación de excepciones personalizadas (`TeacherNotFoundException`, `StudentAlreadyExistsException`, etc.) y manejo global con `@RestControllerAdvice`.
+2. **Uso de Lombok:** Se utilizan anotaciones como `@Data`, `@Builder`, `@NoArgsConstructor` y `@AllArgsConstructor` para reducir el código repetitivo.
+3. **Longitud de Campos:** Todos los atributos de texto tienen su longitud delimitada mediante la anotación `@Column(length = X)`.
+4. **Documentación Swagger:** API completamente documentada y probada mediante Swagger UI (elimina la necesidad de Postman).
+
+---
+
+## Reglas de Negocio
+- **Docentes (Teacher):** 
+  - No se puede crear un docente con la misma combinación de `tipoDocumento` y `numeroDocumento`.
+  - El `email` debe ser único.
+- **General:**
+  - Al momento de actualizar o eliminar un registro (Docente o Estudiante), el sistema verifica previamente su existencia a través de su `ID`.
+  - Los IDs se generan automáticamente utilizando `UUID`.

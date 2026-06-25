@@ -16,26 +16,29 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
+public class Teacher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(length = 20, nullable = false)
-    private String documentNumber;
+    @Column(length = 10, nullable = false)
+    private String tipoDocumento;
 
     @Column(length = 20, nullable = false)
-    private String studentCode;
-
-    @Column(length = 100, nullable = false, unique = true)
-    private String email;
+    private String numeroDocumento;
 
     @Column(length = 100, nullable = false)
     private String names;
 
     @Column(length = 100, nullable = false)
     private String lastName;
+
+    @Column(length = 100, nullable = false, unique = true)
+    private String email;
+
+    @Column(length = 20)
+    private String phoneNumber;
 
     private boolean active;
 }
